@@ -1,0 +1,175 @@
+
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <title>Pixar</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: white;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 35px 5%;
+        }
+
+        h1 {
+            font-family: Georgia, serif;
+            font-size: 28px;
+            font-weight: normal;
+            letter-spacing: 8px;
+        }
+
+        nav a {
+            color: black;
+            text-decoration: none;
+            font-size: 12px;
+            margin-left: 18px;
+        }
+
+        nav a:hover {
+            color: gray;
+            text-decoration: underline;
+        }
+
+        main {
+            width: 90%;
+            margin: auto;
+        }
+
+        .principal img {
+            width: 100%;
+            height: 450px;
+            object-fit: cover;
+        }
+
+        .imatges {
+            display: flex;
+            gap: 25px;
+            margin-top: 60px;
+        }
+
+        .caixa {
+            width: 33.33%;
+            text-align: center;
+        }
+
+        .caixa img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+        }
+
+        .caixa img:hover {
+            opacity: 0.8;
+        }
+
+        .caixa p {
+            font-size: 12px;
+            letter-spacing: 2px;
+            margin-top: 20px;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 70px;
+            padding: 30px;
+        }
+
+        footer h2 {
+            color: darkblue;
+            font-size: 35px;
+            margin-bottom: 40px;
+        }
+
+        footer p {
+            color: gray;
+            font-size: 11px;
+            letter-spacing: 1px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>PIXAR</h1>
+
+        <nav>
+            <a href="#">FEATURE FILMS</a>
+            <a href="#">SHORT FILMS</a>
+            <a href="#">TECHNOLOGY</a>
+            <a href="#">CAREERS</a>
+            <a href="#">EXTRAS</a>
+            <a href="#">ABOUT</a>
+        </nav>
+    </header>
+
+    <main>
+        <div class="principal">
+            <img id="principal"
+                 src="https://placehold.co/1000x600/24204a/ffffff?text=ONWARD"
+                 alt="Onward">
+        </div>
+
+        <div class="imatges">
+
+            <div class="caixa">
+                <a href="?foto=1">
+                    <img src="https://placehold.co/400x300/dae5ef/333333?text=CAREERS+AT+PIXAR"
+                         alt="Careers at Pixar">
+                </a>
+                <p>CAREERS AT PIXAR</p>
+            </div>
+
+            <div class="caixa">
+                <a href="?foto=2">
+                    <img src="https://placehold.co/400x300/c68f60/ffffff?text=SOUL"
+                         alt="Soul">
+                </a>
+                <p>SOUL</p>
+            </div>
+
+            <div class="caixa">
+                <a href="?foto=3">
+                    <img src="https://placehold.co/400x300/333366/ffffff?text=ONWARD"
+                         alt="Onward">
+                </a>
+                <p>ONWARD TRAILERS</p>
+            </div>
+
+        </div>
+    </main>
+
+    <footer>
+        <h2>Disney+</h2>
+
+        <p>Facebook | Twitter | Instagram | YouTube</p>
+
+        <p>PRIVACY POLICY | TERMS OF USE</p>
+        <p>YOUR CALIFORNIA PRIVACY RIGHTS</p>
+        <p>CHILDREN'S ONLINE PRIVACY POLICY</p>
+
+        <p>© DISNEY / PIXAR</p>
+    </footer>
+
+    <script>
+        var fotos = document.querySelectorAll(".caixa img");
+        var principal = document.getElementById("principal");
+        var pagina = new URLSearchParams(window.location.search);
+        var numero = Number(pagina.get("foto"));
+
+        if (numero >= 1 && numero <= 3) {
+            principal.src = fotos[numero - 1].src;
+        }
+    </script>
+
+</body>
+</html>
